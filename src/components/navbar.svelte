@@ -7,9 +7,9 @@
 	}
 
 	const navItems = [
-		{ name: 'Projects', href: '#' },
-		{ name: 'Publications', href: '#' },
-		{ name: 'About', href: '#' }
+		{ name: 'Projects', href: '/projects' },
+		// { name: 'Publications', href: '/publications' },
+		{ name: 'Qualifications', href: '/qualifications' }
 	];
 </script>
 
