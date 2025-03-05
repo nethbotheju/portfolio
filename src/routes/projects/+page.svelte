@@ -20,7 +20,7 @@
 				{ name: 'Node.js', logo: '/images/tech/nodejs.svg' },
 				{ name: 'Tailwind', logo: '/images/tech/tailwind.svg' }
 			],
-			link: '/projects/portfolio'
+			link: '/projects/todoisty'
 		},
 		{
 			id: 2,
@@ -31,26 +31,45 @@
 				{ name: 'Angular', logo: '/images/tech/angular.svg' },
 				{ name: 'Tailwind', logo: '/images/tech/tailwind.svg' }
 			],
-			link: '/projects/ecommerce'
+			link: '/projects/real-time-ticketing-system'
 		},
 		{
 			id: 3,
 			title: 'Git cli client (gity)',
 			description: 'Git cli client with some basic command build with rust',
 			languages: [{ name: 'Rust', logo: '/images/tech/rust.svg' }],
-			link: '/projects/weather-app'
+			link: '/projects/gity'
 		},
 		{
 			id: 4,
-			title: 'Task Management Tool',
-			description:
-				'A Kanban-style task management application with drag-and-drop functionality and user authentication.',
+			title: 'Student Management System',
+			description: 'Student Management system build with c#',
+			languages: [{ name: 'C#', logo: '/images/tech/csharp.svg' }],
+			link: '/projects/student-management-system'
+		},
+		{
+			id: 5,
+			title: 'Movie Prediction',
+			description: 'Movie prediction build using NLP',
+			languages: [{ name: 'Python', logo: '/images/tech/python.svg' }],
+			link: '/projects/movie-prediction'
+		},
+		{
+			id: 5,
+			title: 'Text Editor',
+			description: 'Test editor build using C',
+			languages: [{ name: ' C', logo: '/images/tech/c.svg' }],
+			link: '/projects/text-editor'
+		},
+		{
+			id: 5,
+			title: 'Portfolio',
+			description: 'Portfolio build using svelte',
 			languages: [
-				{ name: 'Angular', logo: '/images/tech/angular.svg' },
-				{ name: 'Firebase', logo: '/images/tech/firebase.svg' },
-				{ name: 'SCSS', logo: '/images/tech/scss.svg' }
+				{ name: ' Svelte', logo: '/images/tech/svelte.svg' },
+				{ name: 'Tailwind', logo: '/images/tech/tailwind.svg' }
 			],
-			link: '/projects/task-manager'
+			link: '/projects/portfolio'
 		}
 	];
 
