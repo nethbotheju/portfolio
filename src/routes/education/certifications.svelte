@@ -128,7 +128,7 @@
 	.logo-container {
 		width: 52px;
 		height: 52px;
-		border-radius: 50%;
+		/* Removed border-radius: 50%; to make it square */
 		overflow: hidden;
 		display: flex;
 		align-items: center;

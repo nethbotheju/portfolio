@@ -4,6 +4,10 @@
 	import Navbar from '../../components/navbar.svelte';
 </script>
 
+<svelte:head>
+	<title>Resume | Neth Botheju</title>
+</svelte:head>
+
 <div class="min-h-screen bg-white">
 	<Navbar />
 	<main class="container mx-auto max-w-4xl px-4 py-8">

@@ -1,5 +1,7 @@
 <!-- components/Navbar.svelte -->
 <script>
+	import { page } from '$app/stores';
+
 	let menuOpen = false;
 
 	function toggleMenu() {
@@ -45,10 +47,23 @@
 			class={`flex-col md:flex md:flex-row md:items-center ${menuOpen ? 'flex' : 'hidden'} mt-2 md:mt-0`}
 		>
 			{#each navItems as item}
-				<a href={item.href} class="px-2 py-1 text-gray-600 hover:text-blue-500 md:mx-2"
-					>{item.name}</a
+				<a
+					href={item.href}
+					class="relative px-2 py-1 text-gray-600 hover:text-gray-400 md:mx-2"
+					class:active={$page.url.pathname === item.href}
 				>
+					{item.name}
+					{#if $page.url.pathname === item.href}
+						<span class="absolute md:-bottom-1 md:left-0 md:h-0.5 md:w-full md:bg-black"></span>
+					{/if}
+				</a>
 			{/each}
 		</nav>
 	</div>
 </header>
+
+<style>
+	.active {
+		font-weight: 500;
+	}
+</style>
