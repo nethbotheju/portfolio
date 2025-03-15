@@ -8,11 +8,13 @@
 	// Search functionality
 	let searchQuery = '';
 
+	let filterType = 'all';
+
 	// Sample project data remains the same
 	const projects = [
 		{
 			id: 1,
-			title: 'To-do list application (todoisty)',
+			title: 'Todoisty',
 			description:
 				'Full stack To do list application build with vue.js and node.js with some basic features.',
 			languages: [
@@ -20,6 +22,7 @@
 				{ name: 'Node.js', logo: '/images/tech/nodejs.svg' },
 				{ name: 'Tailwind', logo: '/images/tech/tailwind.svg' }
 			],
+			type: 'individual',
 			link: '/projects/todoisty'
 		},
 		{
@@ -31,13 +34,15 @@
 				{ name: 'Angular', logo: '/images/tech/angular.svg' },
 				{ name: 'Tailwind', logo: '/images/tech/tailwind.svg' }
 			],
+			type: 'individual',
 			link: '/projects/real-time-ticketing-system'
 		},
 		{
 			id: 3,
-			title: 'Git cli client (gity)',
+			title: 'Gity',
 			description: 'Git cli client with some basic command build with rust',
 			languages: [{ name: 'Rust', logo: '/images/tech/rust.svg' }],
+			type: 'individual',
 			link: '/projects/gity'
 		},
 		{
@@ -45,21 +50,29 @@
 			title: 'Student Management System',
 			description: 'Student Management system build with c#',
 			languages: [{ name: 'C#', logo: '/images/tech/csharp.svg' }],
+			type: 'individual',
 			link: '/projects/student-management-system'
 		},
 		{
 			id: 5,
 			title: 'Movie Prediction',
 			description: 'Movie prediction build using NLP',
-			languages: [{ name: 'Python', logo: '/images/tech/python.svg' }],
+			languages: [
+				{ name: 'Vue.js', logo: '/images/tech/vue.svg' },
+
+				{ name: 'Python', logo: '/images/tech/python.svg' },
+				{ name: 'Flask', logo: '/images/tech/flask.svg' }
+			],
+			type: 'individual',
 			link: '/projects/movie-prediction'
 		},
 		{
 			id: 5,
-			title: 'Text Editor',
-			description: 'Test editor build using C',
+			title: 'Curasync',
+			description: 'Health app',
 			languages: [{ name: ' C', logo: '/images/tech/c.svg' }],
-			link: '/projects/text-editor'
+			type: 'collaborative',
+			link: '/projects/curasync'
 		},
 		{
 			id: 5,
@@ -69,12 +82,17 @@
 				{ name: ' Svelte', logo: '/images/tech/svelte.svg' },
 				{ name: 'Tailwind', logo: '/images/tech/tailwind.svg' }
 			],
+			type: 'individual',
 			link: '/projects/portfolio'
 		}
 	];
 
-	// Filter projects based on search query
+	// Filter projects based on search query and filter type
 	$: filteredProjects = projects.filter((project) => {
+		// First, check the filter type
+		if (filterType !== 'all' && project.type !== filterType) return false;
+
+		// Then apply search query if present
 		if (!searchQuery) return true;
 
 		const query = searchQuery.toLowerCase();
@@ -104,7 +122,27 @@
 				<Profile />
 			</div>
 			<div class="w-full lg:w-4/5">
-				<div class="search-container mb-6">
+				<div class="search-filter-container mb-6">
+					<div class="filter-options mb-4">
+						<button
+							class={`filter-button ${filterType === 'all' ? 'active' : ''}`}
+							on:click={() => (filterType = 'all')}
+						>
+							All
+						</button>
+						<button
+							class={`filter-button ${filterType === 'individual' ? 'active' : ''}`}
+							on:click={() => (filterType = 'individual')}
+						>
+							Individual
+						</button>
+						<button
+							class={`filter-button ${filterType === 'collaborative' ? 'active' : ''}`}
+							on:click={() => (filterType = 'collaborative')}
+						>
+							Collaborative
+						</button>
+					</div>
 					<div class="relative">
 						<input
 							type="text"
@@ -136,6 +174,9 @@
 					{:else}
 						{#each filteredProjects as project}
 							<article class="project-card">
+								<div class="project-type-badge {project.type}">
+									{project.type}
+								</div>
 								<a href={project.link} class="project-title">
 									<h2>{project.title}</h2>
 								</a>
@@ -232,6 +273,7 @@
 		flex-direction: column;
 		min-height: 180px; /* Reduced height from 230px */
 		width: 100%;
+		position: relative;
 	}
 
 	.project-card:hover {
@@ -283,10 +325,65 @@
 		height: 16px;
 	}
 
+	.project-type-badge {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		padding: 0.25rem 0.75rem;
+		border-radius: 20px;
+		font-size: 0.75rem;
+		text-transform: capitalize;
+	}
+
+	.project-type-badge.individual {
+		background: #e1f5fe;
+		color: #0277bd;
+	}
+
+	.project-type-badge.collaborative {
+		background: #e8f5e9;
+		color: #2e7d32;
+	}
+
+	.search-filter-container {
+		width: 100%;
+	}
+
+	.filter-options {
+		display: flex;
+		gap: 0.75rem;
+		margin-bottom: 1rem;
+	}
+
+	.filter-button {
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		background: #f5f5f5;
+		border: none;
+		font-size: 0.875rem;
+		cursor: pointer;
+		transition: all 0.2s ease;
+	}
+
+	.filter-button:hover {
+		background: #e5e5e5;
+	}
+
+	.filter-button.active {
+		background: #3b82f6;
+		color: white;
+	}
+
 	/* Responsive adjustments */
 	@media (max-width: 768px) {
 		.project-container {
 			max-height: 60vh;
+		}
+
+		.project-type-badge {
+			/* Smaller badge on mobile */
+			padding: 0.2rem 0.5rem;
+			font-size: 0.7rem;
 		}
 	}
 
@@ -298,6 +395,11 @@
 
 		.project-card {
 			min-height: 200px; /* Adjusted for mobile */
+		}
+
+		.project-card {
+			min-height: 200px; /* Adjusted for mobile */
+			padding-top: 2.5rem; /* Add space at top for the badge */
 		}
 	}
 </style>
