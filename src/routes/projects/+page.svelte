@@ -14,41 +14,29 @@
 	const projects = [
 		{
 			id: 1,
-			title: 'Todoisty',
-			description:
-				'Full stack To do list application build with vue.js and node.js with some basic features.',
-			languages: [
-				{ name: 'Vue.js', logo: '/images/tech/vue.svg' },
-				{ name: 'Node.js', logo: '/images/tech/nodejs.svg' },
-				{ name: 'Tailwind', logo: '/images/tech/tailwind.svg' }
-			],
-			type: 'individual',
-			link: '/projects/todoisty'
-		},
-		{
-			id: 2,
-			title: 'Real time Ticketing System',
-			description: 'A full-featured realtime ticketing system using springboot and angular',
-			languages: [
-				{ name: 'Springboot', logo: '/images/tech/springboot.svg' },
-				{ name: 'Angular', logo: '/images/tech/angular.svg' },
-				{ name: 'Tailwind', logo: '/images/tech/tailwind.svg' }
-			],
-			type: 'individual',
-			link: '/projects/real-time-ticketing-system'
-		},
-		{
-			id: 3,
 			title: 'Gity',
-			description: 'Git cli client with some basic command build with rust',
+			description: 'Gity is a lightweight command-line interface (CLI) tool built with Rust.',
 			languages: [{ name: 'Rust', logo: '/images/tech/rust.svg' }],
 			type: 'individual',
 			link: '/projects/gity'
 		},
 		{
-			id: 4,
+			id: 2,
+			title: 'Curasync',
+			description: 'Curasync is an all-in-one digital medical solution.',
+			languages: [
+				{ name: 'Nextjs.js', logo: '/images/tech/nextjs.svg' },
+				{ name: 'Node.js', logo: '/images/tech/nodejs.svg' },
+				{ name: 'Tailwind', logo: '/images/tech/tailwind.svg' }
+			],
+			type: 'collaborative',
+			link: '/projects/curasync'
+		},
+		{
+			id: 3,
 			title: 'Movie Prediction',
-			description: 'Movie prediction build using NLP',
+			description:
+				"Movie Prediction Application that predicts the movie based on the user's summary.",
 			languages: [
 				{ name: 'Vue.js', logo: '/images/tech/vue.svg' },
 				{ name: 'Python', logo: '/images/tech/python.svg' },
@@ -58,17 +46,33 @@
 			link: '/projects/movie-prediction'
 		},
 		{
+			id: 4,
+			title: 'Todoisty',
+			description: 'Todoisty is a full-stack user-friendly to-do list application.',
+			languages: [
+				{ name: 'Vue.js', logo: '/images/tech/vue.svg' },
+				{ name: 'Node.js', logo: '/images/tech/nodejs.svg' },
+				{ name: 'Tailwind', logo: '/images/tech/tailwind.svg' }
+			],
+			type: 'individual',
+			link: '/projects/todoisty'
+		},
+		{
 			id: 5,
-			title: 'Curasync',
-			description: 'Health app',
-			languages: [{ name: ' C', logo: '/images/tech/c.svg' }],
-			type: 'collaborative',
-			link: '/projects/curasync'
+			title: 'Real time Ticketing System',
+			description: 'An automated ticketing system with both clients and server side.',
+			languages: [
+				{ name: 'Springboot', logo: '/images/tech/springboot.svg' },
+				{ name: 'Angular', logo: '/images/tech/angular.svg' },
+				{ name: 'Tailwind', logo: '/images/tech/tailwind.svg' }
+			],
+			type: 'individual',
+			link: '/projects/real-time-ticketing-system'
 		},
 		{
 			id: 6,
 			title: 'Portfolio',
-			description: 'Portfolio build using svelte',
+			description: 'Portfolio which I developed with Svelte.',
 			languages: [
 				{ name: ' Svelte', logo: '/images/tech/svelte.svg' },
 				{ name: 'Tailwind', logo: '/images/tech/tailwind.svg' }
