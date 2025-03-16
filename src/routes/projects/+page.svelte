@@ -47,19 +47,10 @@
 		},
 		{
 			id: 4,
-			title: 'Student Management System',
-			description: 'Student Management system build with c#',
-			languages: [{ name: 'C#', logo: '/images/tech/csharp.svg' }],
-			type: 'individual',
-			link: '/projects/student-management-system'
-		},
-		{
-			id: 5,
 			title: 'Movie Prediction',
 			description: 'Movie prediction build using NLP',
 			languages: [
 				{ name: 'Vue.js', logo: '/images/tech/vue.svg' },
-
 				{ name: 'Python', logo: '/images/tech/python.svg' },
 				{ name: 'Flask', logo: '/images/tech/flask.svg' }
 			],
@@ -75,7 +66,7 @@
 			link: '/projects/curasync'
 		},
 		{
-			id: 5,
+			id: 6,
 			title: 'Portfolio',
 			description: 'Portfolio build using svelte',
 			languages: [
