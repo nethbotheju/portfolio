@@ -49,7 +49,7 @@
 			{#each navItems as item}
 				<a
 					href={item.href}
-					class="relative px-2 py-1 text-gray-600 hover:text-gray-400 md:mx-2"
+					class="relative px-2 py-1 text-gray-600 md:mx-2"
 					class:active={$page.url.pathname === item.href}
 				>
 					{item.name}

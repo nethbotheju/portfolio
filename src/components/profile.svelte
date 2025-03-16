@@ -34,8 +34,8 @@
 			<h1 class="mb-1 text-2xl font-bold text-gray-800">Neth Pehesara Botheju</h1>
 			<p class="mb-4 text-sm text-gray-600">
 				Second-year Computer Science student at the University of Westminster. Passionate about
-				software development, backend technologies, AI, and machine learning. Skilled in Python,
-				Java, C, and C#. Driven by innovation and problem-solving.
+				software development, backend technologies, and AI/ML. Dedicated to innovation, efficiency,
+				and solving real-world problems through technology.
 			</p>
 			<div class="grid-row grid gap-2">
 				{#each socialLinks as link}
@@ -98,7 +98,7 @@
 				<h1 class="mb-1 text-xl font-bold text-gray-800">Neth Pehesara Botheju</h1>
 				<p class="mb-4 text-sm text-gray-600">
 					Second-year Computer Science student at the University of Westminster. Passionate about
-					software development, backend technologies, AI, and machine learning.
+					software development, backend technologies, and AI/ML.
 				</p>
 				<div class="grid grid-cols-2 gap-2">
 					{#each socialLinks as link}
